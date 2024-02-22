@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+html {
+  overflow-y: scroll;
+  scrollbar-color:  rgb(14 165 233) rgb(224 242 254);
+  scrollbar-width: thin;
+}
+
+
+@layer utilities {
+}

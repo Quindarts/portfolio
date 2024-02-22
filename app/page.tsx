@@ -1,113 +1,144 @@
-import Image from "next/image";
-
+'use client'
+import Sidebar from '@/components/Sidebar'
+import Title from '@/components/ui/Title'
+import { Icon } from '@iconify/react/dist/iconify.js'
+import Image from 'next/image'
+const LIST_DO = [
+    {
+        icon: 'tabler:ux-circle',
+        title: 'Ui/Ux Design',
+        desc: 'lorem',
+        bgColor: '#fff4f4',
+    },
+    {
+        icon: 'icon-park-twotone:database-network',
+        title: 'Database Design',
+        desc: 'lorem',
+        bgColor: '#eef5fa',
+    },
+    {
+        icon: 'logos:nodejs-icon',
+        title: 'Backend developer',
+        desc: 'lorem',
+        bgColor: '#eef5fa',
+    },
+    {
+        icon: 'logos:google-developers',
+        title: 'Frontend developer',
+        desc: 'lorem',
+        bgColor: '#fff4f4',
+    },
+]
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+    return (
+        <section>
+            <Title name="Welcome!" icon="noto-v1:waving-hand" className="mb-5 mt-2" line />
+            <div className="text-lg text-slate-500">
+                Im Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print
+                media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
+            </div>
+            <div className="my-5 text-lg text-slate-500">
+                My aim is to bring across your message and identity in the most creative way. I created web design for
+                many famous brand companies.
+            </div>
+            <Title name="What I Do" className="mb-5 mt-2" />
+            <div className="flex flex-wrap gap-[30px]">
+                {LIST_DO.map((item: any, index: number) => (
+                    <div
+                        key={index}
+                        className=" flex h-40  gap-3 rounded-md p-5 "
+                        style={{ background: item.bgColor, width: 'calc(50% - 30px)' }}
+                    >
+                        <div>
+                            <Icon icon={item.icon} width={40} />
+                        </div>
+                        <div>
+                            <h2 className="mb-3 text-xl font-[600]">{item.title}</h2>
+                            <p>{item.desc}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <Title name="Contact me" className="mb-5 mt-10" />
+            <div className=" p-7">
+                <form className="flex flex-wrap gap-7">
+                    <div className="flex w-[48%] flex-col gap-2">
+                        <label className="text-xl font-[700] text-slate-700" htmlFor="input">
+                            Email <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            className="rounded-2xl border-2 border-sky-500 p-4 text-xl text-sky-700 outline-none"
+                            type="text"
+                            placeholder="Enter email"
+                        />
+                    </div>
+                    <div className="flex w-[48%] flex-col gap-2">
+                        <label className="text-xl font-[700] text-slate-700" htmlFor="input">
+                            Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            className="rounded-2xl border-2 border-sky-500 p-4 text-xl text-sky-700 outline-none"
+                            type="text"
+                            placeholder="Enter your Name"
+                        />
+                    </div>
+                    <div className="flex w-full flex-col gap-2">
+                        <label className="text-xl font-[700] text-slate-700" htmlFor="input">
+                            Name <span className="text-red-500">*</span>
+                        </label>
+                        <textarea
+                            className="rounded-2xl border-2 border-sky-500 p-4 text-xl text-sky-700 outline-none"
+                            name=""
+                            id=""
+                            cols={30}
+                            rows={10}
+                            placeholder="Message"
+                        ></textarea>
+                    </div>
+                    <div className="flex gap-5">
+                        <button
+                            type="reset"
+                            className="rounded-2xl border-2 border-orange-200 bg-orange-400 px-7 py-3 text-lg font-[600] text-white shadow-lg shadow-red-100"
+                        >
+                            Clear
+                        </button>
+                        <a
+                            href="#_"
+                            className="group relative inline-flex items-center overflow-hidden rounded-full border-2 border-sky-500 px-12 py-3 text-lg font-medium text-sky-500 hover:bg-gray-50 hover:text-white"
+                        >
+                            <span className="duration-400 ease absolute left-0 top-1/2 block h-0 w-full bg-sky-500 opacity-100 transition-all group-hover:top-0 group-hover:h-full"></span>
+                            <span className="ease absolute right-0 flex h-10 w-10 translate-x-full transform items-center justify-start duration-300 group-hover:translate-x-0">
+                                <svg
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                    ></path>
+                                </svg>
+                            </span>
+                            <span className="relative">Send message</span>
+                        </a>
+                        {/* <button
+                            type="submit"
+                            className="rounded-2xl border-2 border-sky-200 bg-sky-500 px-7 py-3 text-lg font-[600] text-white shadow-lg shadow-purple-200"
+                        >
+                            Send message
+                            <Icon
+                                className="ml-2 inline-block"
+                                width={20}
+                                icon="material-symbols:send-outline-rounded"
+                            />
+                        </button> */}
+                    </div>
+                </form>
+            </div>
+        </section>
+    )
 }
