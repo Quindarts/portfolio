@@ -24,7 +24,7 @@ import sus_3 from '@/public/project_img/sus_3.png'
 import sus_4 from '@/public/project_img/sus_4.png'
 import sus_5 from '@/public/project_img/sus_5.png'
 
-import habicom from '@/public/project_img/habicom.png'
+import habicom from '@/public/project_img/habi.png'
 
 import Card from '@/components/ui/Card'
 
