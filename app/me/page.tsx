@@ -8,13 +8,15 @@ const screen_mobile = 1280
 function MePage() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < screen_mobile)
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < screen_mobile)
-        }
-        window.addEventListener('resize', handleResize)
+        if (typeof window != 'undefined') {
+            const handleResize = () => {
+                setIsMobile(window.innerWidth < screen_mobile)
+            }
+            window.addEventListener('resize', handleResize)
 
-        return () => {
-            window.removeEventListener('resize', handleResize)
+            return () => {
+                window.removeEventListener('resize', handleResize)
+            }
         }
     }, [isMobile])
     return (
