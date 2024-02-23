@@ -18,10 +18,10 @@ const LIST_TAB = [
         title: 'App demo',
     },
 ]
-function Tab() {
+function Tab({ className = '' }) {
     const [currentIndex, setCurrentIndex] = useState(0)
     return (
-        <div className="mx-auto mb-10 mt-5 w-full overflow-x-auto ">
+        <div className={`${className} mx-auto mb-10 mt-5 w-full overflow-x-auto `}>
             <div className="flex w-[90%] justify-center gap-7">
                 {LIST_TAB.map((mini, index) => (
                     <Link

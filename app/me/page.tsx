@@ -22,7 +22,9 @@ function MePage() {
     }, [isMobile])
     return (
         <>
-            {isMobile && <DetailPage />}
+            {/* {isMobile && <DetailPage  />}
+             */}
+            <DetailPage />
             <div className="mx-auto w-full px-5">
                 <Title line name="About me" className=" my-3 sm:my-5" />
                 <span className="text-md my-3 sm:my-5 sm:text-lg">

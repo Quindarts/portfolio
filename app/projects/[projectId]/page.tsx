@@ -41,18 +41,14 @@ function ProductDetails(props: any) {
                 <h1>Loading....</h1>
             ) : (
                 <div>
-                    {isMobile ? (
-                        <Link
-                            href="/projects"
-                            className="sticky top-0 z-50 flex  w-full cursor-pointer items-center bg-white p-3 font-[600] text-slate-600 hover:text-sky-500"
-                        >
-                            <Icon width={20} icon="material-symbols:arrow-back-ios" />
-                            Go Back
-                        </Link>
-                    ) : (
-                        <Tab />
-                    )}
-
+                    <Link
+                        href="/projects"
+                        className="sticky top-0 z-50 flex w-full  cursor-pointer items-center bg-white p-3 font-[600] text-slate-600 hover:text-sky-500 xl:hidden"
+                    >
+                        <Icon width={20} icon="material-symbols:arrow-back-ios" />
+                        Go Back
+                    </Link>
+                    <Tab className="hidden xl:block" />
                     <div className="px-5">
                         <section>
                             <Title

@@ -24,7 +24,7 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     const [loading, setLoading] = useState(true)
-    
+
     const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
@@ -54,7 +54,9 @@ export default function RootLayout({
                     </div>
                 ) : (
                     <div className="relative flex min-h-[100vh] flex-col  justify-center gap-9 xl:flex-row xl:bg-slate-300 xl:p-10">
-                        {!isMobile && <Sidebar />}
+                        {/* {!isMobile && <Sidebar  />}
+                         */}
+                        <Sidebar />
                         <main className="mx-auto w-full bg-white xl:rounded-2xl xl:p-14">{children}</main>
                         {!isMobile && <Navbar />}
                         <Link

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 function DetailPage() {
     return (
-        <div className=" bg-white px-6 py-10 text-center">
+        <div className=" xl:hidden bg-white px-6 py-10 text-center">
             <div className="mx-auto mb-5  h-52 w-52 rounded-full ">
                 <Image
                     className="rounded-full border-2 border-slate-300 bg-slate-200 shadow-md  shadow-slate-600"
