@@ -6,9 +6,10 @@ import DetailPage from '../../components/details/page'
 const screen_mobile = 1280
 
 function MePage() {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < screen_mobile)
+    const [isMobile, setIsMobile] = useState(false)
+
     useEffect(() => {
-        if (typeof window != 'undefined') {
+        if (typeof window !== 'undefined') {
             const handleResize = () => {
                 setIsMobile(window.innerWidth < screen_mobile)
             }

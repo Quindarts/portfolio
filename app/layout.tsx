@@ -24,7 +24,8 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     const [loading, setLoading] = useState(true)
-    const [isMobile, setIsMobile] = useState(window.innerWidth < screen_mobile)
+    
+    const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
