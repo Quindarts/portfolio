@@ -45,7 +45,7 @@ function Navbar() {
     }, [pathname])
 
     return (
-        <div className="sticky hidden  h-80 w-32 flex-col gap-5 rounded-2xl bg-white p-5 text-sm font-[500] shadow-lg shadow-slate-400 xl:top-[140px] xl:flex">
+        <div className="sticky hidden h-80 w-32 flex-col gap-5 rounded-2xl bg-white p-5 text-sm font-[500] shadow-lg shadow-slate-400 xl:top-[140px] xl:flex">
             {APP_ROUTE.map((child, index) => (
                 <Link
                     href={child.path}

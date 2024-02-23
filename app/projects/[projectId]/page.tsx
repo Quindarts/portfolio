@@ -6,26 +6,9 @@ import { LIST_CARD_PROJECT } from '../ListCard'
 import Image from 'next/image'
 import Tab from '@/components/Tab'
 import Link from 'next/link'
-
-const screen_mobile = 1280
-
 function ProductDetails(props: any) {
     const { params } = props
     const [currentProject, setCurrenProject] = useState<any>({})
-    const [isMobile, setIsMobile] = useState(false)
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const handleResize = () => {
-                setIsMobile(window.innerWidth < screen_mobile)
-            }
-            window.addEventListener('resize', handleResize)
-
-            return () => {
-                window.removeEventListener('resize', handleResize)
-            }
-        }
-    }, [isMobile])
     useEffect(() => {
         LIST_CARD_PROJECT.map((item, index) => {
             if (index === parseInt(params.projectId)) {

@@ -25,7 +25,7 @@ const APP_ROUTE_MOBILE = [
         icon: 'uil:blogger',
     },
 ]
-function Mobile() {
+function Mobile({ className = '' }) {
     const [active, setActive] = useState<number>(0)
 
     var pathname = usePathname().replace('/', '')
@@ -44,7 +44,7 @@ function Mobile() {
     }, [pathname])
 
     return (
-        <div className="sticky bottom-0 left-1/2 z-50 flex h-28 w-[100vw] justify-center gap-5  border-t-2 border-sky-200 bg-white p-5 text-sm font-[500] shadow-lg shadow-slate-400 xl:top-[140px]">
+        <div className="sticky bottom-0 left-1/2 z-50 flex h-28 w-[100vw] justify-center gap-5 border-t-2  border-sky-200 bg-white p-5 text-sm font-[500] shadow-lg shadow-slate-400 xl:top-[140px] xl:hidden">
             {APP_ROUTE_MOBILE.map((child, index) => (
                 <Link
                     href={child.path}

@@ -3,23 +3,8 @@ import Title from '@/components/ui/Title'
 import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import DetailPage from '../../components/details/page'
-const screen_mobile = 1280
 
 function MePage() {
-    const [isMobile, setIsMobile] = useState(false)
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const handleResize = () => {
-                setIsMobile(window.innerWidth < screen_mobile)
-            }
-            window.addEventListener('resize', handleResize)
-
-            return () => {
-                window.removeEventListener('resize', handleResize)
-            }
-        }
-    }, [isMobile])
     return (
         <>
             {/* {isMobile && <DetailPage  />}

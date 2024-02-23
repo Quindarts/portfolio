@@ -17,7 +17,6 @@ const inter = Inter({ subsets: ['latin'] })
 //     title: 'Trang cá nhân',
 //     description: ' Trang cá nhân Le Minh Quang',
 // }
-const screen_mobile = 1280
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -25,20 +24,6 @@ export default function RootLayout({
 }>) {
     const [loading, setLoading] = useState(true)
 
-    const [isMobile, setIsMobile] = useState(false)
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const handleResize = () => {
-                setIsMobile(window.innerWidth < screen_mobile)
-            }
-            window.addEventListener('resize', handleResize)
-
-            return () => {
-                window.removeEventListener('resize', handleResize)
-            }
-        }
-    }, [isMobile])
     useEffect(() => {
         setTimeout(() => {
             setLoading(false)
@@ -54,18 +39,16 @@ export default function RootLayout({
                     </div>
                 ) : (
                     <div className="relative flex min-h-[100vh] flex-col  justify-center gap-9 xl:flex-row xl:bg-slate-300 xl:p-10">
-                        {/* {!isMobile && <Sidebar  />}
-                         */}
                         <Sidebar />
                         <main className="mx-auto w-full bg-white xl:rounded-2xl xl:p-14">{children}</main>
-                        {!isMobile && <Navbar />}
+                        <Navbar />
                         <Link
                             href="#"
                             className="bottm-[120px] fixed right-6 w-[70px] animate-bounce rounded-full bg-white p-3 shadow-lg shadow-slate-400 xl:bottom-5    "
                         >
                             <Icon icon="noto-v1:top-arrow" className="h-full w-full" />
                         </Link>
-                        {isMobile && <Mobile />}
+                        <Mobile className="" />
                     </div>
                 )}
             </body>
