@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 function Sidebar() {
     return (
-        <div className="sticky mt-[120px] h-[650px] w-full flex-col gap-5 rounded-2xl bg-white px-6 py-10 xl:w-96">
+        <div className="sticky xl:top-[140px] mt-[120px] h-[650px] w-full flex-col gap-5 rounded-2xl bg-white px-6 py-10 xl:w-96">
             <div className=" top-[-150px] w-full text-center">
                 <div className=" z-20 mx-auto mb-5 mt-[-180px]  h-52 w-52  rounded-2xl bg-slate-200 shadow-md ">
                     <Image

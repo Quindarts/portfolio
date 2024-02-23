@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation'
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
-const APP_ROUTE = [
+const APP_ROUTE_MOBILE = [
     {
         path: '/',
         title: 'Home',
@@ -25,18 +25,17 @@ const APP_ROUTE = [
         icon: 'uil:blogger',
     },
 ]
-function Navbar() {
+function Mobile() {
     const [active, setActive] = useState<number>(0)
 
     var pathname = usePathname().replace('/', '')
 
-    const btn_ref = useRef<HTMLButtonElement | null>(null)
     useLayoutEffect(() => {
         if (pathname.length === 0) {
             pathname = 'index'
             setActive(0)
         }
-        APP_ROUTE.forEach((item, key) => {
+        APP_ROUTE_MOBILE.forEach((item, key) => {
             if (item.path.includes(pathname)) {
                 setActive(key)
                 return
@@ -45,17 +44,16 @@ function Navbar() {
     }, [pathname])
 
     return (
-        <div className="sticky flex h-80 w-32 flex-col gap-5 rounded-2xl bg-white p-5 text-sm font-[500] shadow-lg shadow-slate-400 xl:top-[140px]">
-            {APP_ROUTE.map((child, index) => (
+        <div className="sticky bottom-0 left-1/2 z-50 flex h-28 w-[100vw] justify-center gap-5  border-t-2 border-sky-200 bg-white p-5 text-sm font-[500] shadow-lg shadow-slate-400 xl:top-[140px]">
+            {APP_ROUTE_MOBILE.map((child, index) => (
                 <Link
                     href={child.path}
                     key={index}
-                    className={`group relative inline-flex h-20 w-16 items-center justify-center overflow-hidden rounded-md  ${active === index ? 'bg-slate-700 text-white ' : 'bg-slate-200'} p-3  font-medium tracking-tighter text-slate-600`}
+                    className={`group relative inline-flex h-full w-full items-center justify-center overflow-hidden rounded-md sm:h-20 sm:w-20  ${active === index ? ' font-bold text-sky-500 ' : 'text-slate-700'} p-3`}
                 >
-                    <span className="absolute h-0 w-0 rounded-full bg-sky-200 transition-all duration-500 ease-out group-hover:h-56 group-hover:w-56"></span>
                     <span className="relative">
-                        <Icon className="mx-auto" width={20} height={20} icon={child.icon} />
-                        <span className="mt-1 text-[13px]">{child.title}</span>
+                        <Icon className="mx-auto mb-2 h-7 w-7 sm:h-[40px] sm:w-[40px]" icon={child.icon} />
+                        <span className="mt-3 text-[14px] sm:text-[20px]">{child.title}</span>
                     </span>
                 </Link>
             ))}
@@ -63,4 +61,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default Mobile
