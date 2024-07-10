@@ -8,7 +8,7 @@ function Sidebar({ className = '' }) {
             className={`${className} sticky mt-[120px] hidden h-[650px] w-full flex-col gap-5 rounded-2xl bg-white px-6 py-10 xl:top-[140px] xl:block xl:w-96`}
         >
             <div className=" top-[-150px] w-full text-center">
-                <div className=" z-20 mx-auto mb-5 mt-[-180px]  h-52 w-52  rounded-2xl bg-slate-200 shadow-md ">
+{/*                 <div className=" z-20 mx-auto mb-5 mt-[-180px]  h-52 w-52  rounded-2xl bg-slate-200 shadow-md ">
                     <Image
                         className=" rounded-2xl "
                         width={208}
@@ -17,7 +17,7 @@ function Sidebar({ className = '' }) {
                         src="/avt.PNG"
                         priority
                     />
-                </div>
+                </div> */}
                 <div className=" flex w-full flex-col items-center ">
                     <h2 className=" text-xl font-bold md:text-2xl lg:text-3xl xl:text-4xl">Le Minh Quang</h2>
                     <h2 className="mt-5 w-52 rounded-xl bg-slate-200 px-5 py-2 font-[600]">FullStack developer</h2>
